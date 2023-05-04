@@ -9,7 +9,8 @@ def main():
         for row in data:
             if row[1] == line:
                 row[4] = float(row[4])
-                hap += row[4]
+                row[5] = float(row[5])
+                hap = hap+row[4]+row[5]
         f.close()
         return hap
 

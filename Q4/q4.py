@@ -10,8 +10,9 @@ def main():
         for row in data:
             if row[1] == line:
                 row[4] = float(row[4])
-                if mx < row[4]:
-                    mx = row[4]
+                row[5] = float(row[5])
+                if mx < row[4]+row[5]:
+                    mx = row[4]+row[5]
                     station_mx = row[3]
         f.close()
         print("Busiest Station: %s (%1d)"%(station_mx,mx))
@@ -25,8 +26,9 @@ def main():
         for row in data:
             if row[1] == line:
                 row[4] = float(row[4])
-                if mn > row[4]:
-                    mn = row[4]
+                row[5] = float(row[5])
+                if mn > row[4]+row[5]:
+                    mn = row[4]+row[5]
                     station_mn = row[3]
         f.close()
         print("Least Station: %s (%1d)"%(station_mn,mn))
